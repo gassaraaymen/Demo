@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Demo"
+             xmlns:viewModels="clr-namespace:Demo.ViewModels;assembly=Demo"
+             x:Class="Demo.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:MathViewModel />
+    </ContentPage.BindingContext>
+
+
+    <StackLayout Orientation="Vertical">
+
+        <Entry FontSize="40" Text="{Binding ValueA}"></Entry>
+
+        <Entry FontSize="40" Text="{Binding ValueB}"></Entry>
+
+        <Button Text="Add" 
+                FontSize="40"
+                TextColor="White" 
+                BackgroundColor="Olive" 
+                Command="{Binding AddCommand}"></Button>
+
+
+        <Button Text="Multiply" 
+                FontSize="40"
+                TextColor="White" 
+                BackgroundColor="Fuchsia" 
+                Command="{Binding MultiplyCommand}"></Button>
+
+        <Label Text="{Binding Result}" FontSize="40" />
+               
+         
+
+    </StackLayout>
+
+</ContentPage>
